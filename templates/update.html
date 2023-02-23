@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {%csrf_token%}
+    {{msg}}
+    Id :<input type="number" name="id" value="{{emp.id}}"><br><br>
+    company_name :<input type="text" name="company_name" value="{{emp.name}}"><br><br>
+    email_id :<input type="text" name="email_id" value="{{emp.email_id}}"><br><br>
+    company_code:<input type="number" name="company_code" value="{{emp.company_code}}"><br><br>
+    strength :<input type="number" name="strength" value="{{emp.strength}}"><br><br>
+    website:<input type="url" name="website" value="{{emp.website}}"><br><br>
+    created_time:<input type="time" name="created_time" value="{{emp.created_time}}"><br><br>
+    <input type="submit" value="Edit Record">
+</form>
+</body>
+</html>

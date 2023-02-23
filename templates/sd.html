@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/save/">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+<table border="2">
+Emp Details
+    <h3>{{msg}}</h3>
+<thead>
+      <th>ID</th>
+      <th>company_name</th>
+      <th>email_id</th>
+      <th>company_code</th>
+      <th>Strength</th>
+      <th>website</th>
+      <th>created_time</th>
+	  <th>Actions</th>
+</thead>
+    {% for emp in emp %}
+        <tr>
+            <td>{{emp.id}}</td>
+            <td>{{emp.company_name}}</td>
+            <td>{{emp.email_id}}</td>
+            <td>{{emp.company_code}}</td>
+            <td>{{emp.Strength}}</td>
+            <td>{{emp.website}}</td>
+            <td>{{emp.created_time}}</td>
+            <td><a href="/delete/{{emp.id}}">Delete</a> / <a href="/edit/{{emp.id}}">Edit</a> </td>
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
